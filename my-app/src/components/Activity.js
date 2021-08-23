@@ -22,8 +22,8 @@ function Activity(props) {
             activities.map((activity, i) => (
                 <div className="flex shadow-custom p-4 mb-8 text-textColor relative rounded-md" key={i}>
                     <div className="flex-30 bg-custom flex flex-col justify-center items-center">
-                        <h3 className="text-xl font-bold">{activity.activityName}</h3>
-                        <h3 className="inline bg-monthColor text-white font-bold my-1 p-1 rounded-md">{months[month]}</h3>
+                        <h4 className="text-xl font-bold">{activity.activityName}</h4>
+                        <h4 className="inline bg-monthColor text-white font-bold my-1 p-1 rounded-md">{months[month]}</h4>
                     </div>
                     <div className="flex flex-60 flex-wrap px-12">
                         {
