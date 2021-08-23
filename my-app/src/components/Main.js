@@ -79,7 +79,7 @@ class Main extends React.Component {
                 <div>
                     <form className="my-8" onSubmit={this.handleSubmit}>
                         <fieldset className="flex justify-center">
-                            <input type="text" name="input" placeholder="eg: coding" className="rounded-md py-2 px-10 border-l-2 border-t-2 border-b-2 border-gray-300 outline-none focus:border-blue-400" onChange={this.handleChange} value={this.state.inputText} onKeyDown={this.handleKeyDown}/>
+                            <input type="text" name="input" placeholder="eg: coding" className=" py-2 px-10 border-l-2 border-t-2 border-b-2 border-gray-300 outline-none focus:border-blue-400" onChange={this.handleChange} value={this.state.inputText} onKeyDown={this.handleKeyDown}/>
                             <input type="submit" value="Add Activity" className="bg-green-400 text-white p-2 cursor-pointer"/>
                         </fieldset>
                     </form>
