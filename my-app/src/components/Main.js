@@ -52,13 +52,13 @@ class Main extends React.Component {
         let {id, value} = event.target;
         let activities = this.state.activities;
         if( !activities[id].activityDays.includes(value)) {
-            activities[id].activityDays.push(value);
+           activities[id].activityDays.push(value); 
+           
         }else {
             let index = activities[id].activityDays.findIndex(a => a === value);
-            activities[id].activityDays.splice(index, 1);
+            activities[id].activityDays.splice(index, 1);  
         }
         this.setState({activities});
-        
        
     }
 
@@ -75,11 +75,11 @@ class Main extends React.Component {
     render() {
         return (
             <main className="my-12">
-                <h1 className="text-center text-4xl font-bold text-blue-600">Monthly Activity Tracker!</h1>
+                <h1 className="text-center text-3xl font-bold text-blue-600">Monthly Activity Tracker!</h1>
                 <div>
                     <form className="my-8" onSubmit={this.handleSubmit}>
                         <fieldset className="flex justify-center">
-                            <input type="text" name="input" placeholder="eg: coding" className="py-2 px-4 border-2 border-gray-300" onChange={this.handleChange} value={this.state.inputText} onKeyDown={this.handleKeyDown}/>
+                            <input type="text" name="input" placeholder="eg: coding" className="rounded-md py-2 px-10 border-l-2 border-t-2 border-b-2 border-gray-300 outline-none focus:border-blue-400" onChange={this.handleChange} value={this.state.inputText} onKeyDown={this.handleKeyDown}/>
                             <input type="submit" value="Add Activity" className="bg-green-400 text-white p-2 cursor-pointer"/>
                         </fieldset>
                     </form>
