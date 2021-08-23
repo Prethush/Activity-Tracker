@@ -51,14 +51,45 @@ class Main extends React.Component {
     handleClick = (event) => {
         let {id, value} = event.target;
         let activities = this.state.activities;
+        
         if( !activities[id].activityDays.includes(value)) {
-           activities[id].activityDays.push(value); 
+            activities[id].activityDays.push(value);
+            let activity = activities[id].activityDays;
+            this.setState((prevState) => {
+               let updatedActivity =  prevState.activities.map((a, i) => {
+                    if(i === Number(id)){
+                        return {
+                            ...a,
+                            activityDays: activity
+                        }
+                    }
+                    return a
+                })
+                return ({activities: updatedActivity})
+            })
            
-        }else {
-            let index = activities[id].activityDays.findIndex(a => a === value);
-            activities[id].activityDays.splice(index, 1);  
-        }
-        this.setState({activities});
+        } else {
+                this.setState((prevState) => {
+                    let index = activities[id].activityDays.findIndex(a => a === String(value));
+                    activities[id].activityDays.splice(index, 1);
+                    let activity = activities[id].activityDays;
+                    let updatedActivity = prevState.activities.map((a, i) => {
+                        if(i === Number(id)) {
+                            return {
+                                ...a,
+                                activityDays: activity
+                            }
+                        }
+                        return a
+                    })
+                    return (
+                        {
+                            activities: updatedActivity
+                        }
+                    )
+                })
+         }
+        
        
     }
 
