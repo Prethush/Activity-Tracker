@@ -90,10 +90,12 @@ class Main extends React.Component {
        
     }
 
+    // add data to localstorage
     handleUpdateLocalStorage = () => {
         localStorage.setItem("activities", JSON.stringify(this.state.activities));
     }
 
+    //close/remove an activity
     handleRemove = ({target}) => {
         let {id} = target;
         console.log(id);
@@ -104,6 +106,8 @@ class Main extends React.Component {
         return (
             <main className="my-12 pb-12">
                 <h1 className="text-center text-3xl font-bold text-blue-600">Monthly Activity Tracker!</h1>
+
+                {/* Adding Activity */}
                 <div className="">
                     <form className="py-8" onSubmit={this.handleSubmit}>
                         <fieldset className="flex justify-center">
@@ -112,6 +116,8 @@ class Main extends React.Component {
                         </fieldset>
                     </form>
                 </div>
+
+                {/* Activity Section */}
                 <section className="w-3/5 mx-auto flex flex-col items-center my-12">
                     {
                         this.state.activities.length ? < Activity {...this.state} handleRemove={this.handleRemove} handleClick={this.handleClick}/> : ""
